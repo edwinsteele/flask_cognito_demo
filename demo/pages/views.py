@@ -1,5 +1,5 @@
 from flask import request, jsonify, Blueprint, current_app as app, render_template
-from flask_jwt_extended import jwt_required
+from flask_jwt_extended import jwt_required, get_jwt_identity
 
 blueprint = Blueprint("pages", __name__, url_prefix="/pages",
                       template_folder="templates")
@@ -13,4 +13,4 @@ def hello():
 @blueprint.route("/protected", methods=["GET"])
 @jwt_required
 def hello_auth():
-    return render_template("hello.html", name="protected person")
+    return render_template("hello.html", name=get_jwt_identity())
