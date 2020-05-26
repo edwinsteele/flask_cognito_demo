@@ -1,0 +1,9 @@
+default_context:
+    project_name: "flask_cognito_demo"
+    app_name: "demo"
+    python_version: "3.7"
+    admin_user_username: "admin"
+    admin_user_email: "edwin@wordspeak.org"
+    admin_user_password: "admin"
+    use_celery: "no"
+    wsgi_server: "gunicorn"
