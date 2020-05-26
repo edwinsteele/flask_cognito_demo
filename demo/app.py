@@ -1,6 +1,6 @@
 from flask import Flask
 
-from demo import auth, api
+from demo import auth, api, pages
 from demo.extensions import db, jwt, migrate, apispec
 
 
@@ -55,3 +55,4 @@ def register_blueprints(app):
     """
     app.register_blueprint(auth.views.blueprint)
     app.register_blueprint(api.views.blueprint)
+    app.register_blueprint(pages.views.blueprint)
